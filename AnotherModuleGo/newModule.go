@@ -26,7 +26,7 @@ func main() {
 
 	// Get a greeting message and print it.
 	// Request a greeting message.
-	message, err2 := helloModule.Hello("SDFSDS")
+	message, err2 := helloModule.Hello("")
 	message2, err := helloModule.Hello("kingName")
 	// If an error was returned, print it to the console and
 	// exit the program.
