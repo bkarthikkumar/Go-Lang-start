@@ -24,20 +24,31 @@ func main() {
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
 
+	// A slice of names.
+	names := []string{"Gladys", "Samantha", "Darrin"}
+
+	// Request greeting messages for the names.
+	messages, err := helloModule.Hellos(names)
+
 	// Get a greeting message and print it.
 	// Request a greeting message.
-	message, err2 := helloModule.Hello("Karthik")
-	message2, err := helloModule.Hello("kingName")
+	message, err := helloModule.Hello("Karthik")
 	// If an error was returned, print it to the console and
 	// exit the program.
 	if err != nil {
 		log.Fatal(err)
 	}
-	if err2 != nil {
-		log.Fatal(err2)
-	}
 
+	// If no error was returned, print the returned map of
+	// messages to the console.
+	fmt.Println(messages)
 	fmt.Println(message)
-	fmt.Println(message2)
 	fmt.Println(helloModule.NewMethod("KK"))
 }
+
+/*
+With these changes, you:
+
+Create a names variable as a slice type holding three names.
+Pass the names variable as the argument to the Hellos function.
+*/
